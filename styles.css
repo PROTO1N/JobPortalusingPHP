@@ -1,0 +1,115 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #2c003e;
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo img {
+  height: 50px;
+  width: 50px; /* Ensure the width is equal to the height */
+  border-radius: 50%; /* Makes the image circular */
+  object-fit: cover; /* Ensures the image covers the whole container */
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav ul li {
+  display: inline;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.search-header {
+  margin-left: auto;
+ 
+}
+
+.search-header form {
+  display: flex;
+}
+
+.search-header input[type="text"] {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px 0 0 3px;
+  padding-left: 500px;
+}
+
+.search-header button {
+  padding: 5px 10px;
+  border: none;
+  background-color: #ff5733;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 3px 3px 0;
+}
+
+main {
+  margin-top: 80px; /* Height of the fixed header */
+}
+
+section {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  color: white;
+}
+
+.hero {
+  background: linear-gradient(135deg, #45006b 0%, #1b0033 100%);
+}
+
+.opportunities {
+  background: linear-gradient(135deg, #1b0033 0%, #45006b 100%);
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #2c003e;
+  color: white;
+  position: relative;
+  width: 100%;
+}
+
+.opportunity {
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  text-align: left;
+}
+
+.opportunity img {
+  width: 100%;
+  border-radius: 10px 10px 0 0;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="logo">
+        <img src="images/logo.png" alt="Logo" />
+      </div>
+      <nav>
+        <ul>
+          <li><a href="#">Browse Opportunities</a></li>
+          <li><a href="post_opportunity.php">Post an Opportunity</a></li>
+          <li><a href="#">LogIn</a></li>
+          <li><a href="post_opportunity.php">SignUp</a></li>
+        </ul>
+      </nav>
+      <div class="search-header">
+        <form action="search.php" method="get">
+          <input
+            type="text"
+            name="query"
+            placeholder="Search opportunities..."
+          />
+          <button type="submit">Search</button>
+        </form>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <h1>Explore New Opportunities!</h1>
+        <p>
+          Or, <a href="post_opportunity.php">post an opportunity</a> for free.
+        </p>
+        <form class="search-form">
+          <select name="opportunity">
+            <option value="any">Any Opportunity</option>
+          </select>
+          <select name="region">
+            <option value="any">Any Region</option>
+          </select>
+          <button type="submit">Explore</button>
+        </form>
+      </section>
+      <section class="opportunities">
+        <h2>Deadline Approaching</h2>
+        <div id="opportunities-container"></div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 Job Portal. All rights reserved.</p>
+    </footer>
+    <script src="scripts.js"></script>
+    <script src="neonAnimation.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        fetch("fetch_opportunities.php")
+          .then((response) => response.json())
+          .then((data) => {
+            const container = document.getElementById(
+              "opportunities-container"
+            );
+            data.forEach((opportunity) => {
+              const div = document.createElement("div");
+              div.classList.add("opportunity");
+              div.innerHTML = `
+                            <img src="${opportunity.image_url}" alt="${
+                opportunity.title
+              }">
+                            <h3>${opportunity.title}</h3>
+                            <p>${opportunity.description}</p>
+                            <p>Deadline: ${new Date(
+                              opportunity.deadline
+                            ).toLocaleDateString()}</p>
+                        `;
+              container.appendChild(div);
+            });
+          })
+          .catch((error) =>
+            console.error("Error fetching opportunities:", error)
+          );
+      });
+    </script>
+  </body>
+</html>
