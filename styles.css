@@ -4,6 +4,7 @@ html {
   padding: 0;
   height: 100%;
   font-family: Arial, sans-serif;
+  font-size: 1.1em; /* Increase base font size */
 }
 
 header {
@@ -13,10 +14,11 @@ header {
   padding: 20px;
   background: #2c003e;
   color: white;
-  position: fixed;
   width: 100%;
   top: 0;
   z-index: 1000;
+  transition: top 0.3s; /* Smooth transition for header visibility */
+  position: fixed;
 }
 
 .logo img {
@@ -43,7 +45,6 @@ nav ul li a {
 
 .search-header {
   margin-left: auto;
- 
 }
 
 .search-header form {
@@ -96,6 +97,80 @@ footer {
   color: white;
   position: relative;
   width: 100%;
+  font-size: 1.2em; /* Increase footer font size */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+}
+
+.social-media a {
+  margin-right: 10px;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2em;
+}
+
+.social-media img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.social-media a:hover {
+  color: #ff5733; /* Hover color for social media links */
+}
+
+.footer-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.footer-links .primary-link {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-links ul li {
+  margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+  text-decoration: underline; /* Underline links */
+  color: white; /* White color for links */
+}
+
+.footer-links ul li a:hover {
+  text-decoration: underline; /* Maintain underline on hover */
+  color: white; /* Maintain white color on hover */
+}
+
+.footer-description {
+  max-width: 300px;
+  text-align: left;
+}
+
+.footer-description h3 {
+  margin-top: 0;
 }
 
 .opportunity {
